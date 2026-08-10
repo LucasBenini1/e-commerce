@@ -11,6 +11,11 @@
         border-radius: 4px;
         outline: none;
     }
+
+    @media (max-width: 768px){
+        width: 100%;
+        padding: 1vh 0;
+    }
 }
 .loader{
   font-size: 24px;
@@ -22,6 +27,14 @@
 .home-container{
     max-width: 90%;
     margin: 20px auto;
+}
+
+.image-container{
+    margin: 0 auto;
+
+    img{
+        width: 100%;
+    }
 }
 
 .item-container{
@@ -36,5 +49,10 @@
     border-left: 4px solid #6f4e37;
     padding-left: 8px;
 }
-   
+
+.noItemsFound{
+    width: 100%;
+    text-align: center;
+    color: #9c9c9c;
+}
 

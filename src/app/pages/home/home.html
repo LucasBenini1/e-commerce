@@ -1,6 +1,6 @@
 <main class="home-container">
   <form class="search-form">
-    <input type="text" id="search" name="search" [value]="filter()" (input)="filter.set($event.target.value)" placeholder="Digite o nome do item...">
+    <input type="text" id="search" name="search" [value]="filter()" (input)="filter.set($event.target.value)" placeholder="Busque pelo nome do item...">
   </form>
   
   @if(filter().length === 0){
@@ -9,21 +9,25 @@
     </section>
   } 
 
-  @for(categoria of categories(); track categoria){
-    @if(filteredItems(filter()).some(item => item.category === categoria)){
-      <div class="category-index">
-        <h2>{{ categoria.charAt(0).toUpperCase() + categoria.slice(1) }}</h2>
-      </div>
-    }
+  @if(filteredItems(filter()).length === 0){
+    <p class="noItemsFound">Nenhum item encontrado para "{{ filter() }}".</p>
+  } @else {
+    @for(categoria of categories(); track categoria){
+      @if(filteredItems(filter()).some(item => item.category === categoria)){
+        <div class="category-index">
+          <h2>{{ categoria.charAt(0).toUpperCase() + categoria.slice(1) }}</h2>
+        </div>
 
-    <section class="item-container">
-      @for(item of filteredItems(filter()); track item.id){
-        @if(item.category === categoria){ 
-          <app-card [item]="item" (click)="handleItemClick(item)"></app-card>
-        }
+        <section class="item-container">
+          @for(item of filteredItems(filter()); track item.id){
+            @if(item.category === categoria){ 
+              <app-card [item]="item" (click)="handleItemClick(item)"></app-card>
+            }
+          }
+        </section>
       }
-    </section>
-  } @empty {
+    } @empty {
       <p class="loader">Carregando...</p>
+    }
   }
 </main>

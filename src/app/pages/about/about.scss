@@ -1,6 +1,6 @@
 :host {
-  --background-body: #ffffff; /* Fundo principal puro e branco */
-  --bg-beige: #f8f5f1; /* Bege usado apenas para diferenciar seções */
+  --background-body: #ffffff;
+  --bg-beige: #f8f5f1;
   --surface: #ffffff;
   --primary: #6f4e37;
   --primary-dark: #563c2b;
@@ -29,7 +29,6 @@
   margin: 0 auto;
 }
 
-/* Utilitários de Grid e Layout */
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
 .grid-2-1 { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: center; }
 .grid-1-2 { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: center; }
@@ -37,7 +36,6 @@
 .section-spaced { padding: 8rem 0; }
 .bg-beige { background-color: var(--bg-beige); }
 
-/* Tipografia */
 h1, h2, h3, h4 {
     font-family: var(--font-title);
     font-weight: 500;
@@ -62,9 +60,7 @@ p {
   margin-bottom: 0.5rem;
 }
 
-/* --- HERO --- */
 .hero {
-  padding: 10rem 0 8rem;
   background: linear-gradient(180deg, #fefdfb 0%, var(--bg-beige) 100%);
 }
 
@@ -111,12 +107,10 @@ p {
 .btn-scroll:hover { color: var(--primary-dark); }
 .btn-scroll:hover i { transform: translateY(3px); }
 
-/* --- SECTION HEADERS --- */
 .section-header { margin-bottom: 3rem; }
 .section-header h2 { font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.2; }
 .section-header.centered { max-width: 600px; margin-left: auto; margin-right: auto; }
 
-/* --- STORY --- */
 .story p { margin-bottom: 1.5rem; }
 .story-visual img {
     width: 100%;
@@ -124,7 +118,6 @@ p {
     box-shadow: var(--shadow-sm);
 }
 
-/* --- CARDS --- */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -175,7 +168,6 @@ p {
   margin: 0;
 }
 
-/* --- NUMBERS --- */
 .numbers {
   background: var(--primary);
   color: #fff;
@@ -209,7 +201,6 @@ p {
   display: block;
 }
 
-/* --- DNA (Etapas) --- */
 .dna-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -225,7 +216,6 @@ p {
 .dna-item h4 { font-family: var(--font-body); font-weight: 600; color: var(--text); font-size: 1.1rem; margin-bottom: 0.5rem; }
 .dna-item p { font-size: 0.9rem; max-width: 300px; margin: 0 auto; }
 
-/* --- MISSION --- */
 blockquote {
   margin: 0;
   padding: 3rem;
@@ -252,8 +242,6 @@ blockquote p {
   z-index: 1;
   margin: 0;
 }
-
-/* --- VISIT --- */
 .contact-list { list-style: none; padding: 0; margin: 2rem 0 0; }
 .contact-list li {
     display: flex; align-items: center; gap: 1rem;
@@ -265,10 +253,8 @@ blockquote p {
     width: 100%; border-radius: 16px; box-shadow: var(--shadow-sm);
 }
 
-/* --- MEDIA QUERIES --- */
 @media (max-width: 992px) {
     .grid-2, .grid-2-1, .grid-1-2 { gap: 2rem; }
-    .hero { padding: 8rem 0 6rem; }
     .hero-content h1 { font-size: 3rem; }
 }
 

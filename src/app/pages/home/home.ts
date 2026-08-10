@@ -26,7 +26,7 @@ export class Home implements OnInit {
     const filteredItems = this.data().filter((item: Item) =>
       item.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
-    return filteredItems.length > 0 ? filteredItems : this.data();
+    return filteredItems;
   }
 
   ngOnInit() {
