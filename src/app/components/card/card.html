@@ -1,0 +1,25 @@
+<div class="product-card">
+    <div class="product-image">
+        <span>Imagem</span>
+    </div>
+    <div class="product-details">
+        <div class="product-header">
+            <span class="product-brand">{{ item.brand }}</span>
+            <h4 class="product-title">{{ item.name }}</h4>
+        </div>
+        <div class="product-meta">
+            <span class="rating">★ {{ item.rating }}</span>
+            <span class="reviews">({{ item.reviewsCount }} reviews)</span>
+        </div>
+        <p class="product-description">{{ item.description }}</p>
+        <div class="sizes-container">
+            <span class="sizes-label">Tamanhos</span>
+            <div class="sizes-text-fallback">
+                {{ item.sizes[0] !== 'Único' ? item.sizes[0] + ' ao ' + item.sizes[item.sizes.length - 1] : 'Único' }}
+            </div>
+        </div>
+        <div class="price-box">
+            <span class="price-main">R$ {{ item.price }}</span>
+        </div>
+    </div>
+</div>

@@ -3,5 +3,8 @@ import { Home } from './pages/home/home';
 
 export const routes: Routes = [
     {path: '', component: Home},
-    {path: 'details/:id', loadComponent: () => import('./pages/details/details').then(m => m.Details)}
+    {path: 'details/:id', loadComponent: () => import('./pages/details/details').then(m => m.Details)},
+    {path: 'checkout', loadComponent: () => import('./pages/shopping/shopping').then(m => m.Shopping)},
+    {path: 'about', loadComponent: () => import('./pages/about/about').then(m => m.About)},
+    {path: '**', redirectTo: ''}
 ];

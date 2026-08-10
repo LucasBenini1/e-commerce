@@ -1,0 +1,204 @@
+$color-surface: #ffffff;
+$color-surface-hover: #f1f3f5;
+$color-accent: #6f4e37;
+$color-accent-dark: #4a3319;
+$color-text-main: #212529;
+$color-text-muted: #6c757d;
+$color-border: #e9ecef;
+
+.shopping-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+
+  .page-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: $color-text-main;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .empty-cart {
+    text-align: center;
+    padding: 60px 20px;
+    background: $color-surface;
+    border-radius: 8px;
+    border: 1px solid $color-border;
+
+    p {
+      font-size: 18px;
+      color: $color-text-muted;
+      margin-bottom: 20px;
+    }
+
+    .back-link {
+      color: $color-accent;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $color-accent-dark;
+      }
+    }
+  }
+
+  .checkout-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+
+    @media (max-width: 968px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .order-summary {
+    background: $color-surface;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid $color-border;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: $color-text-main;
+      margin-bottom: 20px;
+    }
+
+    .items-list {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid $color-border;
+
+      .summary-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 0;
+        border-bottom: 1px solid $color-border;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .item-name {
+          color: $color-text-main;
+          font-size: 14px;
+        }
+
+        .item-price {
+          color: $color-accent;
+          font-weight: 600;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .total {
+      display: flex;
+      justify-content: space-between;
+      font-size: 18px;
+      font-weight: 600;
+      color: $color-text-main;
+
+      .total-price {
+        color: $color-accent;
+        font-size: 24px;
+      }
+    }
+  }
+
+  .checkout-form {
+    background: $color-surface;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid $color-border;
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: $color-text-main;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+
+      label {
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+        color: $color-text-main;
+        margin-bottom: 8px;
+      }
+
+      input {
+        width: 100%;
+        padding: 12px 16px;
+        border: 1px solid $color-border;
+        border-radius: 6px;
+        font-size: 14px;
+        color: $color-text-main;
+        transition: all 0.2s;
+        box-sizing: border-box;
+
+        &:focus {
+          outline: none;
+          border-color: $color-accent;
+          box-shadow: 0 0 0 3px rgba(111, 78, 55, 0.1);
+        }
+
+        &::placeholder {
+          color: $color-text-muted;
+        }
+      }
+
+      .error {
+        display: block;
+        color: #d32f2f;
+        font-size: 12px;
+        margin-top: 6px;
+      }
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      background: $color-accent;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 10px;
+
+      &:hover:not(:disabled) {
+        background: $color-accent-dark;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(111, 78, 55, 0.3);
+      }
+
+      &:disabled {
+        background: $color-text-muted;
+        cursor: not-allowed;
+        opacity: 0.6;
+      }
+    }
+  }
+}

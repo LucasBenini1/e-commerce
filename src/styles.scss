@@ -1,6 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
 *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+body{
+  background: linear-gradient(135deg, #f5f7fa 0%, #f1f4f8 100%);
 }

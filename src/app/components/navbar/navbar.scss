@@ -1,6 +1,14 @@
-.container{
+.container{  // TODO: Remover o position:fixed e relacionados e voltar a cor;
     width: 100%;
-    background-color: #000080;
+    // background: linear-gradient(to bottom right, #6f4e37, #997963);
+    background: #000080;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+}
+
+img{
+    width: 200px;
 }
 
 .navbar{
@@ -9,7 +17,8 @@
     align-items: center;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 10px 20px;
+    padding: 10px 40px;
+    height: 6em;
 }
 
 .menu ul{
@@ -18,10 +27,12 @@
     
     li{
         list-style: none;
+        color: #ebebeb;
+        cursor: pointer;
 
         a{
             text-decoration: none;
-            color: #ebebeb;
+            color: inherit;
             font-size: 16px;
         }
     }

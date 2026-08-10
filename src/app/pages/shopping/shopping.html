@@ -1,0 +1,122 @@
+<div class="shopping-container">
+  <h1 class="page-title">Finalizar Compra</h1>
+
+  @if (cartService.selectedItems().length === 0) {
+    <div class="empty-cart">
+      <p>Seu carrinho está vazio</p>
+      <a routerLink="/" class="back-link">← Voltar para a loja</a>
+    </div>
+  } @else {
+    <div class="checkout-content">
+      <div class="order-summary">
+        <h2>Resumo do Pedido</h2>
+        <div class="items-list">
+          @for (item of cartService.selectedItems(); track $index) {
+            <div class="summary-item">
+              <span class="item-name">{{ item.name }}</span>
+              <span class="item-price">R$ {{ item.price }}</span>
+            </div>
+          }
+        </div>
+        <div class="total">
+          <span>Total:</span>
+          <span class="total-price">R$ {{ getTotalPrice() }}</span>
+        </div>
+      </div>
+
+      <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" class="checkout-form">
+        <h2>Dados de Entrega</h2>
+        
+        <div class="form-group">
+          <label for="name">Nome Completo</label>
+          <input 
+            type="text" 
+            id="name" 
+            formControlName="name"
+            placeholder="Seu nome completo"
+          >
+          @if (checkoutForm.get('name')?.touched && checkoutForm.get('name')?.invalid) {
+            <span class="error">Nome é obrigatório (mínimo 3 caracteres)</span>
+          }
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input 
+              type="email" 
+              id="email" 
+              formControlName="email"
+              placeholder="seu@email.com"
+            >
+            @if (checkoutForm.get('email')?.touched && checkoutForm.get('email')?.invalid) {
+              <span class="error">E-mail válido é obrigatório</span>
+            }
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Telefone</label>
+            <input 
+              type="tel" 
+              id="phone" 
+              formControlName="phone"
+              placeholder="11999999999"
+            >
+            @if (checkoutForm.get('phone')?.touched && checkoutForm.get('phone')?.invalid) {
+              <span class="error">Telefone válido é obrigatório</span>
+            }
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Endereço</label>
+          <input 
+            type="text" 
+            id="address" 
+            formControlName="address"
+            placeholder="Rua, número, complemento"
+          >
+          @if (checkoutForm.get('address')?.touched && checkoutForm.get('address')?.invalid) {
+            <span class="error">Endereço é obrigatório</span>
+          }
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="city">Cidade</label>
+            <input 
+              type="text" 
+              id="city" 
+              formControlName="city"
+              placeholder="Sua cidade"
+            >
+            @if (checkoutForm.get('city')?.touched && checkoutForm.get('city')?.invalid) {
+              <span class="error">Cidade é obrigatória</span>
+            }
+          </div>
+
+          <div class="form-group">
+            <label for="zipCode">CEP</label>
+            <input 
+              type="text" 
+              id="zipCode" 
+              formControlName="zipCode"
+              placeholder="00000-000"
+            >
+            @if (checkoutForm.get('zipCode')?.touched && checkoutForm.get('zipCode')?.invalid) {
+              <span class="error">CEP válido é obrigatório</span>
+            }
+          </div>
+        </div>
+
+        <button 
+          type="submit" 
+          class="submit-btn"
+          [disabled]="checkoutForm.invalid"
+        >
+          Finalizar Compra
+        </button>
+      </form>
+    </div>
+  }
+</div>

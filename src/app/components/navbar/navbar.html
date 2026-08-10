@@ -1,11 +1,13 @@
 <section class="container">
     <div class="navbar">
-        <h1 style="color: yellow;">UNIP</h1>
+        <!-- <h1 style="color: #fff;">PROJETO DE ESTUDO</h1> -->
+         <img src="/unip.png" />
         <nav class="menu">
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contact</a></li>
+                <li><a routerLink="/">Home</a></li>
+                <li><a routerLink="/about">About</a></li>
+                <li><a routerLink="/contact">Contact</a></li>
+                <li (click)="openCart()">Carrinho</li>
             </ul>
         </nav>
     </div>

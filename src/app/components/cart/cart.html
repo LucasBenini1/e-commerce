@@ -1,0 +1,19 @@
+@if (statusCart()) {
+    <div class="container" #cart>
+        <button class="close-btn" (click)="closeCart()">✕</button>
+        <h2 class="title">Meu Carrinho</h2>
+        <ul class="cart-list">
+            @for (item of uniqueItems(); track $index) {
+                <li class="cart-item">
+                    <p>{{ item }}</p>
+                </li>
+            } @empty {
+                <p>Seu carrinho está vazio.</p>
+            }
+        </ul>
+        @if (uniqueItems().length > 0) {
+            <a routerLink="/checkout" class="checkout-btn" (click)="closeCart()">Finalizar Compra</a>
+        }
+        <button class="clear-btn" (click)="clearCart()">Limpar Carrinho</button>
+    </div>
+}

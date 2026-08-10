@@ -1,0 +1,112 @@
+.details-page {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #f6f8fb 100%);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(34, 49, 63, 0.06);
+}
+
+.product-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.product-media {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fdfbf7 0%, #f3ece4 100%); 
+
+  .media-image {
+    font-size: 120px;
+    opacity: 0.25;
+  }
+
+  .badge {
+    position: absolute;
+    top: 16px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  .badge.featured {
+    left: 16px;
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    color: #222;
+    box-shadow: 0 6px 18px rgba(255,215,0,0.12);
+  }
+
+  .badge.discount {
+    right: 16px;
+    background: #ff6b6b;
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(255,107,107,0.12);
+  }
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .title {
+    font-size: 28px;
+    margin: 0;
+    color: #1f2d3d;
+  }
+
+  .brand {
+    font-size: 13px;
+    color: #667eea;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-top: 4px;
+  }
+
+  .meta-row { display: flex; gap: 12px; align-items: center; }
+
+  .price-row { display: flex; gap: 12px; align-items: baseline; }
+  .price-old { text-decoration: line-through; color: #95a5a6; }
+  .price-current { font-size: 28px; font-weight: 900; color: #27ae60; }
+
+  .sizes { margin-top: 6px; }
+  .sizes-list { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+  .size-btn { padding: 8px 12px; border-radius: 8px; border: 1px solid #e6e9ef; background: #fafbfc; cursor: pointer; font-weight: 700; }
+
+  .colors-list { display: flex; gap: 8px; margin-top: 8px; }
+  .color-swatch { width: 28px; height: 28px; border-radius: 50%; display: inline-block; border: 2px solid rgba(0,0,0,0.06); }
+
+  .actions { display: flex; gap: 12px; margin-top: 16px; }
+  .add-cart { background: #667eea; color: white; padding: 12px 18px; border-radius: 10px; border: none; font-weight: 800; cursor: pointer; box-shadow: 0 8px 20px rgba(102,126,234,0.18); }
+  .buy-now { background: transparent; border: 2px solid #667eea; color: #333; padding: 10px 16px; border-radius: 10px; font-weight: 700; cursor: pointer; }
+
+  .description { margin-top: 24px; color: #495057; line-height: 1.6; }
+
+  .stock-notice { background: #fff3cd; color: #856404; padding: 8px 12px; border-radius: 8px; font-weight: 700; display: inline-block; }
+}
+
+/* Map simple color names to swatch colors (fallbacks) */
+.color-swatch[title="preto"] { background: #000; }
+.color-swatch[title="branco"] { background: #fff; border: 1px solid #ddd; }
+.color-swatch[title="cinza"] { background: #9ea7b4; }
+.color-swatch[title="azul-marinho"] { background: #243b55; }
+.color-swatch[title="bege"] { background: #d6c3a6; }
+.color-swatch[title="marrom"] { background: #6b4f3b; }
+.color-swatch[title="caramelo"] { background: #c58b58; }
+.color-swatch[title="verde-musgo"] { background: #556b2f; }
+.color-swatch[title="off-white"] { background: #fbfbf8; border: 1px solid #eee; }
+
+@media (max-width: 900px) {
+  .product-wrap { grid-template-columns: 1fr; }
+  .product-media { height: 360px; }
+}
