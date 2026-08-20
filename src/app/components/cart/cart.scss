@@ -1,10 +1,4 @@
-$color-surface: #ffffff;
-$color-surface-hover: #f1f3f5;
-$color-accent: #6f4e37;
-$color-accent-dark: #4a3319;
-$color-text-main: #212529;
-$color-text-muted: #6c757d;
-$color-border: #e9ecef;
+@import '../../../_variables.scss';
 
 .container {
     position: fixed;
@@ -137,6 +131,10 @@ $color-border: #e9ecef;
             font-weight: 500;
             padding: 0;
             text-align: left;
+        }
+
+        .product-quantity{
+            color: #ccc;
         }
     }
 }

@@ -7,17 +7,10 @@
                 <li class="cart-item">
                     <div class="product-info">
                         <h4>{{ product.item.name }}</h4>
-                        <span class="product-brand">
-                            {{ product.item.brand }}
-                        </span>
-                        <span class="product-price">
-                            R$ {{ product.item.price }}
-                        </span>
+                        <span class="product-price">R$ {{ product.item.price }}</span>
                     </div>
                     <div class="product-quantity">
-                        <span>
-                            x{{ product.quantity }}
-                        </span>
+                        <span>x{{ product.quantity }}</span>
                     </div>
                 </li>
             } @empty {
@@ -25,18 +18,11 @@
             }
         </ul>
         @if (uniqueItems().length > 0) {
-            <a
-                routerLink="/checkout"
-                class="checkout-btn"
-                (click)="closeCart()"
-            >
+            <a routerLink="/checkout" class="checkout-btn" (click)="closeCart()">
                 Finalizar Compra
             </a>
         }
-        <button
-            class="clear-btn"
-            (click)="clearCart()"
-        >
+        <button class="clear-btn" (click)="clearCart()">
             Limpar Carrinho
         </button>
     </div>

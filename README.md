@@ -23,7 +23,6 @@ Dev E-commerce
   - Signal Forms para formulários;                                        <-- NÃO IMPLEMENTADO
   - Dumb Components;                                                      <-- PARCIALMENTE IMPLEMENTADO
   - Route Guards;                                                         <-- NÃO IMPLEMENTADO
-  - Metodologia BEM para estilos;                                         <-- NÃO IMPLEMENTADO
 
  Descrição:
 
