@@ -1,5 +1,62 @@
-<section class="about">
-  <div class="about_image-container">
-      <img src="https://dummyimage.com/350x200" alt="Imagem inicial do sobre da loja" />
-  </div>
-</section>
+<main class="about-container">
+  <section class="hero-editorial">
+    <div class="hero-title-group">
+      <span class="tagline">Manifesto & Essência</span>
+      <h1 class="main-title">A arte de vestir com <em>intenção</em> e essência.</h1>
+    </div>
+
+    <div class="collage-grid">
+      <figure class="img-primary">
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1000" alt="Coleção editorial de roupas de linho" />
+      </figure>
+      
+      <figure class="img-secondary">
+        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=800" alt="Detalhe do tecido e textura" />
+      </figure>
+
+      <div class="editorial-badge">
+        <p class="badge-text">Feito à mão no Brasil</p>
+        <span class="badge-sub">Edições Limitadas</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="manifesto-section">
+    <div class="sticky-column">
+      <h2>O Processo</h2>
+    </div>
+    <div class="content-column">
+      <p class="lead-quote">"Não criamos apenas roupas. Esculpimos tecidos nobres para acompanhar a trajetória de pessoas extraordinárias."</p>
+      <div class="text-blocks">
+        <p>Fundada no coração do Brasil, nossa marca nasceu da inquietação contra a produção em massa. Acreditamos que o luxo contemporâneo está na desaceleração, no toque do algodão puro e na precisão de um corte estruturado.</p>
+        <p>Nossas coleções são lançadas em pequenos lotes numerados, garantindo que nenhum recurso natural seja desperdiçado e que cada peça possua uma identidade única.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bento-section">
+    <div class="bento-header">
+      <h2>Nossos Pilares</h2>
+      <p>A estrutura que sustenta cada costura do nosso ecossistema.</p>
+    </div>
+
+    <div class="bento-grid">
+      <article *ngFor="let item of values" [class]="'bento-card ' + item.gridClass">
+        <span class="card-num">{{ item.number }}</span>
+        <div class="card-content">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div *ngFor="let stat of stats" class="stat-card">
+        <span class="stat-value">{{ stat.value }}</span>
+        <span class="stat-label">{{ stat.label }}</span>
+      </div>
+    </div>
+  </section>
+</main>
