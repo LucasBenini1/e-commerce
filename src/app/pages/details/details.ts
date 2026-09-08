@@ -19,7 +19,7 @@ export class Details implements OnInit {
   public cartService = inject(CartService);
   public toastrService = inject(ToastrService);
   public router = inject(Router);
-
+  public selectedSize: string | null = null;
 
   public itemFiltrado = computed<Item | null>(() => {
     const id = this.itemId();
@@ -28,6 +28,10 @@ export class Details implements OnInit {
     if (!id || lista.length === 0) return null;
     return lista.find(item => item.id === Number(id)) || null;
   });
+
+  selectSize(size: string) {
+    this.selectedSize = this.selectedSize === size ? null : size;
+  }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');

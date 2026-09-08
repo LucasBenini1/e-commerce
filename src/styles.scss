@@ -10,6 +10,10 @@
     "wdth" 100;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body{
   background: linear-gradient(135deg, #f5f7fa 0%, #f1f4f8 100%);
 }

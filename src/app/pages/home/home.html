@@ -1,33 +1,66 @@
 <main class="home-container">
-  <form class="search-form">
-    <input type="text" id="search" name="search" [value]="filter()" (input)="filter.set($event.target.value)" placeholder="Busque pelo nome do item...">
-  </form>
-  
-  @if(filter().length === 0){
-    <section class="image-container">
-      <img src="https://dummyimage.com/1230x300/000080/fff" alt="Dummy Image"/>
-    </section>
-  } 
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Encontre o que você precisa</h1>
+      <form class="search-form" (submit)="$event.preventDefault()">
+        <input 
+          type="text" 
+          id="search" 
+          name="search" 
+          [value]="filter()" 
+          (input)="filter.set($any($event.target).value)" 
+          placeholder="Busque pelo nome do item..."
+        />
+      </form>
+    </div>
+  </section>
 
   @if(filteredItems(filter()).length === 0){
-    <p class="noItemsFound">Nenhum item encontrado para "{{ filter() }}".</p>
+    <div class="empty-state">
+      <p class="noItemsFound">Nenhum item encontrado para "{{ filter() }}".</p>
+    </div>
   } @else {
-    @for(categoria of categories(); track categoria){
-      @if(filteredItems(filter()).some(item => item.category === categoria)){
-        <div class="category-index">
-          <h2>{{ categoria.charAt(0).toUpperCase() + categoria.slice(1) }}</h2>
-        </div>
-
-        <section class="item-container">
-          @for(item of filteredItems(filter()); track item.id){
-            @if(item.category === categoria){ 
-              <app-card [item]="item" (click)="handleItemClick(item)"></app-card>
+    <div class="content-layout">
+      <aside class="category-sidebar">
+        <span class="sidebar-title">Categorias</span>
+        <nav class="sidebar-nav">
+          @for(categoria of categories(); track categoria){
+            @if(filteredItems(filter()).some(item => item.category === categoria)){
+              <a [href]="'#' + categoria" class="sidebar-link">
+                {{ categoria.charAt(0).toUpperCase() + categoria.slice(1) }}
+              </a>
             }
           }
-        </section>
-      }
-    } @empty {
-      <p class="loader">Carregando...</p>
-    }
+        </nav>
+      </aside>
+
+      <div class="category-feed">
+        @for(categoria of categories(); track categoria){
+          @if(filteredItems(filter()).some(item => item.category === categoria)){
+            <section [id]="categoria" class="category-block">
+              <div class="category-header">
+                <h2>{{ categoria.charAt(0).toUpperCase() + categoria.slice(1) }}</h2>
+                <span class="item-count">
+                  {{ filteredItems(filter()).filter(i => i.category === categoria).length }} itens
+                </span>
+              </div>
+
+              <div class="item-grid">
+                @for(item of filteredItems(filter()); track item.id){
+                  @if(item.category === categoria){ 
+                    <app-card [item]="item" (click)="handleItemClick(item)"></app-card>
+                  }
+                }
+              </div>
+            </section>
+          }
+        } @empty {
+          <div class="empty-state">
+            <p class="loader">Carregando...</p>
+          </div>
+        }
+      </div>
+    </div>
   }
 </main>

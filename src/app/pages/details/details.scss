@@ -110,3 +110,7 @@
   .product-wrap { grid-template-columns: 1fr; }
   .product-media { height: 360px; }
 }
+
+.size-btn.active {
+  background-color: rgb(170, 170, 170) !important;
+}

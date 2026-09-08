@@ -40,7 +40,7 @@
             <label>Tamanhos</label>
             <div class="sizes-list">
               @for(size of item.sizes; track $index) {
-                <button class="size-btn">{{ size }}</button>
+                <button class="size-btn" [class.active]="selectedSize === size" (click)="selectSize(size)">{{ size }}</button>
               }
             </div>
           </div>
