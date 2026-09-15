@@ -1,5 +1,5 @@
 import { Component, inject, signal, WritableSignal } from '@angular/core';
-import { ToastrService } from '../../services/toastr-service';
+import { ToastrService } from '../../services/toastr.service';
 
 @Component({
   selector: 'app-toastr',

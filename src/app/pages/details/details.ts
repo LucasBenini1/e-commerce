@@ -1,9 +1,9 @@
 import { Component, inject, computed, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ItemsFetchService } from '../../services/items-fetch-service';
+import { ItemsFetchService } from '../../services/items-fetch.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CartService } from '../../services/cart-service';
-import { ToastrService } from '../../services/toastr-service';
+import { CartService } from '../../services/cart.service';
+import { ToastrService } from '../../services/toastr.service';
 import { Item } from '../../interfaces/item.interface';
 
 @Component({

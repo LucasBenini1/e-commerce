@@ -4,7 +4,7 @@ import { Home } from './pages/home/home';
 import { Details } from './pages/details/details';
 import { Navbar } from './components/navbar/navbar';
 import { Cart } from './components/cart/cart';
-import { CartService } from './services/cart-service';
+import { CartService } from './services/cart.service';
 import { Toastr } from './components/toastr/toastr';
 
 @Component({

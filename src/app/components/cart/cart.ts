@@ -1,6 +1,6 @@
 import { Component, ElementRef, inject, ViewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { CartService } from '../../services/cart-service';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-cart',

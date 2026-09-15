@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { CartService } from '../../services/cart-service';
+import { CartService } from '../../services/cart.service';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 

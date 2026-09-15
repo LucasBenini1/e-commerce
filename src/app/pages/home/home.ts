@@ -1,5 +1,5 @@
 import { Component, inject, OnInit, computed, WritableSignal, signal } from '@angular/core';
-import { ItemsFetchService } from '../../services/items-fetch-service';
+import { ItemsFetchService } from '../../services/items-fetch.service';
 import { Card } from '../../components/card/card';
 import { Router } from '@angular/router';
 import { Item } from '../../interfaces/item.interface';

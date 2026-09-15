@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { CartService } from '../../services/cart-service';
+import { CartService } from '../../services/cart.service';
 import { RouterLink } from '@angular/router';
 import { LucideAngularModule, House, Info, Mail, ShoppingCart } from 'lucide-angular';
 
