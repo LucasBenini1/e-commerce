@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="price-box">
-            <span class="price-main">R$ {{ item.price }}</span>
+            <span class="price-main">{{ item.price | currency:'BRL':'symbol':'1.2-2' }}</span>
         </div>
     </div>
 </div>
