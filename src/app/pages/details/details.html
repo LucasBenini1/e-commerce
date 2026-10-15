@@ -30,9 +30,9 @@
 
         <div class="price-row">
           @if(item.compareAtPrice && item.compareAtPrice > item.price) {
-            <span class="price-old">R$ {{ item.compareAtPrice | currency:'BRL':'symbol':'1.2-2' }}</span>
+            <span class="price-old">{{ item.compareAtPrice | currency:'BRL':'symbol':'1.2-2' }}</span>
           }
-          <span class="price-current">R$ {{ item.price | currency:'BRL':'symbol':'1.2-2' }}</span>
+          <span class="price-current">{{ item.price | currency:'BRL':'symbol':'1.2-2' }}</span>
         </div>
 
         @if(item.sizes && item.sizes.length > 0) {
